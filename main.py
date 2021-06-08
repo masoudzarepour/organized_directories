@@ -1,3 +1,8 @@
 from pathlib import Path
-dir_path = Path("/mnt/Users/mzarepoor/Downloads/Telegram Desktop")
-print(dir(dir_path))
+import sys
+
+dir_path = sys.argv[1]
+dir_path = Path(dir_path)
+
+for items in dir_path.iterdir():
+    print(items.is_file())
